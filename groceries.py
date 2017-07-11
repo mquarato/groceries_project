@@ -30,6 +30,8 @@ print("THERE ARE " + str(len(products)) + " PRODUCTS:")
 products = sorted(products, key=operator.itemgetter("name"))
 
 for product in products:
-    print(" + " + product["name"])
+    price_usd = '(${0:.2f})'.format(product["price"])
+    #print(price_usd)
+    print(" + " + product["name"] + " " +price_usd)
 
 #code.interact(local=locals())
