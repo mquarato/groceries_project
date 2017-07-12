@@ -54,8 +54,12 @@ departments = list(departments)
 #print(departments)
 #products = sorted(products, key=operator.itemgetter("department"))
 
+departments.sort()
+
 for i in departments:
     print (" + " + i)
+
+
 
 
 
