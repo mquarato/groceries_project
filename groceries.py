@@ -26,41 +26,33 @@ products = [
 
 #PRODUCTS
 
-#print("--------------")
-#print("THERE ARE " + str(len(products)) + " PRODUCTS:")
+print("--------------")
+print("THERE ARE " + str(len(products)) + " PRODUCTS:")
 
-#products = sorted(products, key=operator.itemgetter("name"))
+products = sorted(products, key=operator.itemgetter("name"))
 
-#for product in products:
-#    price_usd = '(${0:.2f})'.format(product["price"])
-#    #print(price_usd)
-#    print(" + " + product["name"] + " " +price_usd)
+for product in products:
+    price_usd = '(${0:.2f})'.format(product["price"])
+    #print(price_usd)
+    print(" + " + product["name"] + " " +price_usd)
 
 #DEPARTMENTS
 
 print("--------------")
 
-departments = []
+departments = [] #create an empty list
 
 for product in products:
-    departments.append(product["department"])
+    departments.append(product["department"]) #add all items in department to departments list
 
-departments = set(departments)
+unique_departments = set(departments) #removing duplicate values
+unique_departments = list(unique_departments) #converting to list
+unique_departments.sort() #sorting
 
-print("There are " + str(len(departments)) + " Departments:")
+#values = list(values)
 
-departments = list(departments)
+print("There are " + str(len(unique_departments)) + " Departments:")
 
-#print(departments)
-#products = sorted(products, key=operator.itemgetter("department"))
-
-departments.sort()
-
-for i in departments:
-    print (" + " + i)
-
-
-
-
-
-#print(departments)
+for department_name in unique_departments:
+    product_count = departments.count(department_name)
+    print(" + " + department_name.title() + " (" + str(product_count) + " products)")
