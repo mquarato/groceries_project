@@ -1,4 +1,4 @@
-import code
+import code #code.interact(local=locals())
 import operator
 
 products = [
@@ -24,14 +24,30 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # Products based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-print("--------------")
-print("THERE ARE " + str(len(products)) + " PRODUCTS:")
+#PRODUCTS
 
-products = sorted(products, key=operator.itemgetter("name"))
+#print("--------------")
+#print("THERE ARE " + str(len(products)) + " PRODUCTS:")
+
+#products = sorted(products, key=operator.itemgetter("name"))
+
+#for product in products:
+#    price_usd = '(${0:.2f})'.format(product["price"])
+#    #print(price_usd)
+#    print(" + " + product["name"] + " " +price_usd)
+
+#DEPARTMENTS
+
+print("--------------")
+
+departments = []
 
 for product in products:
-    price_usd = '(${0:.2f})'.format(product["price"])
-    #print(price_usd)
-    print(" + " + product["name"] + " " +price_usd)
+    departments.append(product["department"])
 
-#code.interact(local=locals())
+departments = set(departments)
+
+print("There are " + str(len(departments)) + " Departments:")
+#departments = list(departments)
+
+#print(departments)
