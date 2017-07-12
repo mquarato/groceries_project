@@ -48,6 +48,15 @@ for product in products:
 departments = set(departments)
 
 print("There are " + str(len(departments)) + " Departments:")
-#departments = list(departments)
+
+departments = list(departments)
+
+#print(departments)
+#products = sorted(products, key=operator.itemgetter("department"))
+
+for i in departments:
+    print (" + " + i)
+
+
 
 #print(departments)
