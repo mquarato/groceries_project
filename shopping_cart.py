@@ -1,5 +1,3 @@
-import code #code.interact(local=locals())
-import operator
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -23,34 +21,3 @@ products = [
     {"id":19, "name": "Gluten Free Quinoa Three Cheese & Mushroom Blend", "department": "dry goods pasta", "aisle": "grains rice dried goods", "price": 3.99},
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # Products based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
-
-#PRODUCTS
-
-print("--------------")
-print("THERE ARE " + str(len(products)) + " PRODUCTS:")
-
-products = sorted(products, key=operator.itemgetter("name"))
-
-for product in products:
-    price_usd = '(${0:.2f})'.format(product["price"])
-    #print(price_usd)
-    print(" + " + product["name"] + " " +price_usd)
-
-#DEPARTMENTS
-
-print("--------------")
-
-departments = [] #create an empty list
-
-for product in products:
-    departments.append(product["department"]) #add all items in department to departments list
-
-unique_departments = set(departments) #removing duplicate values
-unique_departments = list(unique_departments) #converting to list
-unique_departments.sort() #sorting
-
-print("There are " + str(len(unique_departments)) + " Departments:")
-
-for department_name in unique_departments:
-    product_count = departments.count(department_name)
-    print(" + " + department_name.title() + " (" + str(product_count) + " products)")
